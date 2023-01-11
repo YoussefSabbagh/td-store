@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Teko&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply h-full w-full bg-myWhite font-body scroll-smooth;
+  }
+
+  a {
+    @apply text-myBlack hover:font-bold hover:text-myPurple;
+  }
+}
+@layer components {
+  .app {
+    @apply h-full w-full text-myBlack;
+  }
+
+  .flexB {
+    @apply flex items-center justify-between;
+  }
+
+  .flexC {
+    @apply flex items-center justify-center;
+  }
+
+  .mobileMenu {
+    @apply absolute top-[80px] -left-full h-[calc(100vh-80px)] w-full  flex-col bg-primary-100 opacity-0;
+  }
+  .desktopMenu {
+    @apply relative top-0 h-auto flex-row space-x-4 opacity-100;
+  }
+
+  /* Scroll */
+  .scroll-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-style::-webkit-scrollbar {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(66, 245, 141) rgb(66, 245, 141);
+  }
+  .scroll-style::-webkit-scrollbar {
+    @apply w-2;
+  }
+  .scroll-style::-webkit-scrollbar-track {
+    @apply bg-slate-700;
+  }
+  .scroll-style::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gradient-to-tr from-blue-500 via-teal-500 to-green-500;
+  }
+
+  /* Theme-Colors */
+  .bg-theme {
+    background-image: linear-gradient(
+      0.2deg,
+      rgba(40, 173, 222, 1) 4.8%,
+      rgb(27, 76, 224) 85.5%
+    );
+  }
+  .bg-theme-cart {
+    @apply bg-gradient-to-b from-slate-900 to-gray-900 shadow-sm shadow-gray-900;
+  }
+
+  /* Clip-path */
+  .clip-path {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 65%);
+  }
+
+  /* Blur-Effect */
+  .blur-effect-theme {
+    @apply z-[100] bg-white/50 bg-opacity-50 bg-clip-padding opacity-100 shadow-sm shadow-slate-100 backdrop-blur backdrop-filter transition-all duration-300;
+  }
+
+  /* Icon Stles */
+  .icon-style {
+    @apply h-6 w-6 cursor-pointer leading-tight text-slate-100 transition-all duration-100 active:scale-110 sm:h-5 sm:w-5;
+  }
+
+  /* text-gradient */
+  .text-gradient {
+    @apply bg-gradient-to-tr from-blue-500 to-sky-500 bg-clip-text text-transparent;
+  }
+
+  /* border */
+  .rounded-theme {
+    border-radius: 5% 100% 10% 5%;
+  }
+
+  /* button */
+  .button-theme {
+    @apply rounded px-7 py-1 shadow-md transition-all duration-100 ease-in-out active:scale-90 sm:text-sm;
+  }
+
+  /* tranistions-theme */
+  .transitions-theme {
+    @apply cursor-pointer transition-all duration-700 ease-in-out;
+  }
+
+  .FormGroup {
+    @apply mx-4 mt-0 mb-5 rounded border-none bg-transparent p-0;
+  }
+
+  .tooltip {
+    @apply relative inline-block cursor-pointer;
+  }
+
+  .tooltip .tooltiptext {
+    @apply invisible absolute bottom-full z-10 w-full rounded-lg bg-myYellow-300 px-4 py-2 text-center text-myBlack opacity-0 transition-opacity duration-500;
+  }
+
+  .tooltip:hover .tooltiptext {
+    @apply visible opacity-100;
+  }
+}
